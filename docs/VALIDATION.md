@@ -30,5 +30,10 @@ Photos and models remain generated concepts. Actual manufacturer details, bookin
 - Landscape mobile menu tested at 667x375: fits viewport and closes with Escape.
 - Full-page desktop/mobile and scrolled 1920px header screenshots visually inspected.
 
+## Vercel deployment output directory
+- Vercel build failed with `NEXT_OUTPUT_DIR_MISSING` because `next.config.ts` set `distDir: ".next-build"` while Vercel expects `.next`.
+- `distDir` is now `process.env.VERCEL ? ".next" : ".next-build"`, so local builds keep `.next-build` isolation and Vercel builds emit `.next`.
+- Verified: `npm run typecheck` passed; `VERCEL=1 npm run build` created `.next` (`.next-build` absent); plain `npm run build` created `.next-build`; `npm test` passed 3/3.
+
 ## Mobile lifestyle fix verification
 Production build and TypeScript passed. All 11 browser tests passed, including a new 320/390/600/700px test verifying the full photo aspect ratio, contain fit, no image transform, and text below the photo. The 390px section screenshot was visually inspected: rider, scooter, wheels and mirrors are visible.
