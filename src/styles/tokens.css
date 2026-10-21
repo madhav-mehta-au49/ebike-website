@@ -1,0 +1,15 @@
+:root {
+  --color-paper: #f8f8f2;
+  --color-ink: #1b241c;
+  --color-olive: #596a4e;
+  --color-lime: #c2ec74;
+  --color-dark: #243329;
+  --color-footer: #1c2921;
+  --color-muted: #72786d;
+  --color-line: #dce0d5;
+  --font-sans: "Manrope Variable", Arial, sans-serif;
+  --page-gutter: clamp(20px, 4vw, 88px);
+  --space-unit: 4px;
+  --radius-button: 999px;
+  --section-space: clamp(72px, 8vw, 120px);
+}
